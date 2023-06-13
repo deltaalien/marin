@@ -5,7 +5,6 @@ if(isset($_GET['odjava']))
 {
     unset($_SESSION['userId']);
     unset($_SESSION['user']);
-    unset($_SESSION['status']);
     session_destroy();
 }
 ?>
@@ -37,19 +36,27 @@ if(isset($_GET['odjava']))
     }
     else
     {
-        echo "Prijavljeni ste kao {$_SESSION['user']} ({$_SESSION['status']})<br>";
-        echo "<a href='index.php'>Početna</a> | <a href='vesti.php'>Vesti</a> | <a href='korisnici.php'>Korisnici</a> | <a href='index.php?odjava'>Odjavite se</a> ";
+        echo "Prijavljeni ste kao {$_SESSION['user']}<br>";
+        echo "<a href='admin.php'>Potvrdi rezervacije</a> | <a href='index.php?odjava'>Odjavite se</a> ";
     }
 
     ?>
 
 <br>
 <h1>SOKO VOZ - REZERVACIJA</h1>
+
+<table>
+<tr>
+<td>
 <?php
 ucitajKarte();
-
-
 ?>
+<td>
+
+</td>
+</td>
+</tr>
+</table>
 </form>
 </body>
 </html>

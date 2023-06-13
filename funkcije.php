@@ -1,7 +1,7 @@
 <?php
 function prijavljen()
 {
-    if (isset($_SESSION['user']) and isset($_SESSION['userId']) and isset($_SESSION['status']))
+    if (isset($_SESSION['user']) and isset($_SESSION['userId']))
         return true;
     else
         return false;

@@ -13,7 +13,7 @@ if(isset($_GET['odjava']))
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Prijava</title>
+    <title>Index</title>
     <script src="jquery-3.6.0.min.js"></script>
     <script src="funkcije.js"></script>
     <style>
@@ -26,14 +26,14 @@ if(isset($_GET['odjava']))
     </style>
 </head>
 <body>
-<h1>Početna</h1>
 <?php
     if(!prijavljen())
-    {
-        echo '<form action="index.php" method="post">';
+    {   echo '<div style="background: orange; padding: 5px; width: 40%;  border: 1px solid black;">';
+        echo '<form action="index.php" method="post" >';
         echo '<input type="text" name="korime" id="korime" placeholder="Unesite korisničko ime"> <input type="password" name="lozinka" id="lozinka" placeholder="Unesite lozinku"> <button type="button" id="prijava">Prijavite se</button><br>';
         echo "</form>";
         echo "<div id='status'></div>";
+        echo "</div>";
     }
     else
     {
@@ -43,10 +43,10 @@ if(isset($_GET['odjava']))
 
     ?>
 
-    <hr>
-    <div id="vesti"></div>
+<br>
+<h1>SOKO VOZ - REZERVACIJA</h1>
 <?php
-
+ucitajKarte();
 
 
 ?>

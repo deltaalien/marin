@@ -1,7 +1,7 @@
 <?php
 function prijavljen()
 {
-    if(isset($_SESSION['user']) and isset($_SESSION['userId']) and isset($_SESSION['status']) )
+    if (isset($_SESSION['user']) and isset($_SESSION['userId']) and isset($_SESSION['status']))
         return true;
     else
         return false;
@@ -9,8 +9,27 @@ function prijavljen()
 
 function konekcija()
 {
-    $db=@mysqli_connect("localhost", "root","", "pva_jun_23");
-    if(!$db) return false;
+    $db = @mysqli_connect("localhost", "root", "", "pva_jun_23");
+    if (!$db)
+        return false;
     mysqli_query($db, "SET NAMES utf8");
     return $db;
+}
+
+function ucitajKarte()
+{
+    $db = konekcija();
+    $sql = "SELECT * FROM karte";
+    $rez = mysqli_query($db, $sql);
+
+    if (mysqli_num_rows($rez) == 0)
+        echo "Nema karata";
+    else {
+        while ($red = mysqli_fetch_object($rez)) {
+            echo "<div style='border: 1px solid black; background: orange; margin-bottom: 1px; padding: 0px'>";
+            echo "<h4>$red->naziv</h4>";
+            echo "<p>$red->komentar</p>";
+            echo "</div>";
+        }
+    }
 }

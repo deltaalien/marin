@@ -17,4 +17,14 @@ $(document).ready(function(){
             }
        });
     });
+    $("#rezervacija").click(function(){
+      var destinacija = $("#destinacija").val();
+      var karta = $("#karta").val();
+      var datum = $("#datum").val();
+      var kom = $("#kom").val();
+
+      if(karta == -1 || destinacija == "" || datum=="" || kom == "") {
+        alert("Sva polja su obavezna");
+      }
+    })
 })

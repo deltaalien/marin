@@ -52,7 +52,23 @@ if(isset($_GET['odjava']))
 ucitajKarte();
 ?>
 <td>
-
+<div style="background: grey; border: 1px solid black; padding-left: 10%; padding-right: 10%; width: 100%">
+    <h3>Unesite vase podatke</h3>
+    <form>
+        <input type="text" placeholder="Unesite destinaciju" id="destinacija" name="destinacija"/>
+        <br />
+        <select name="karta" id="karta">
+            <option value="-1">--Izaberite vrstu karte--</option>
+            <?php ucitajKarteSelect();?>
+        </select>
+        <br>
+        <input type="date" id="datum" name="datum"/>
+        <br/>
+        <textarea type="textArea" id="kom" placeholder="Unesite info"> </textarea>
+        <br/>
+        <button id="rezervacija">Rezervisi kartu</button>
+    </form>
+</div>
 </td>
 </td>
 </tr>

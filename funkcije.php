@@ -33,3 +33,15 @@ function ucitajKarte()
         }
     }
 }
+
+function ucitajKarteSelect(){
+    $db = konekcija();
+    $sql = "SELECT * FROM karte";
+    $rez = mysqli_query($db, $sql);
+
+    while ($red = mysqli_fetch_object($rez)) {
+        echo "<option value='$red->id'>$red->naziv</option>";
+
+    }
+    
+}
